@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,intial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="header">
+            
+            </header>
+
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                        Packet Viewer
+                    </div>
+                </div>
+                <ul class="sidebar-list">
+
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="sidebar-list-item">
+                                <span class="material-symbols-outlined">
+                                        upload
+                                </span>
+                                <label for="fileInput">Upload</label>
+                                <input type="file" id="fileInput" style="display: none;" name="file">
+                                </div>
+                                
+                                <div class="sidebar-list-item">
+                                <span class="material-symbols-outlined">
+                                        publish
+                                </span>
+                                <label for="fileSubmit">Submit</label>
+                                <input type="submit" id="fileSubmit" style="display: none;"value="Upload">
+                                </div>
+                            </form>
+
+                    
+                </ul>
+            </aside>
+
+            <main class="main-container">
+                <div class="main-title">
+                    <h2>DASHBOARD</h2>
+                </div>
+
+                <div class="main-cards">
+
+                    <div class="card">
+                        <div class="card-inner">
+                        <h3>Traffic Volume</h3>
+                        <span class="material-symbols-outlined">network_node</span>
+                        </div>
+                     <h1>{{ total_data }} Bytes</h1>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>Packets Transferred</h3>
+                            <span class="material-symbols-outlined">lan</span>
+                        </div>
+                        <h1>{{ total_packets }}</h1>
+                    </div>
+
+                        <div class="card">
+                            <div class="card-inner">
+                                <h3>Packet Rate</h3>
+                                <span class="material-symbols-outlined">speed</span>
+                            </div>
+                            <h1>{{ packet_rate }}/Second</h1>
+                        </div>
+                </div>
+
+                <div class="charts">
+                    <div class="charts-card">
+                        <h2 class="chart-title">Protocol Distribution</h2>
+                        <div id="bar-chart"></div>
+                    </div>
+
+                    <div class="charts-card">
+                        <h2 class="chart-title">Packet Transmission</h2>
+                        <div id="area-chart"></div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.47.0/apexcharts.min.js" integrity="sha512-oM6gsyV28tHLTsSyakEjJ8TpRtYpjrbWQ9aBEPJIyS17LcEXltOVDaa/S9V+x9cxT9HKW+x3E39wqtYYDU1LXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../static/js/script.js"></script>
+    </body>
+</html>
+
